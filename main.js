@@ -45,6 +45,8 @@ function handleClick(event) {
     displayStats();
   }
 }
+var button = document.querySelector("#button");
+button.addEventListener("click", resetGame);
 
 function hide() {
   firstCardClicked.classList.remove("hidden");
@@ -61,5 +63,27 @@ function displayStats(){
 }
 
 function calculateAccuracy(attempts, matches){
+  if(attempts === 0){
+    return 0;
+  }
   return Math.trunc(matches/attempts*100);
+
+}
+
+function resetGame(){
+  resetCards();
+  matches = 0;
+  gamesPlayed = 0;
+  attempts = 0;
+  accuracy = 0;
+  displayStats();
+  document.querySelector("#win").classList.add("hidden");
+}
+
+function resetCards(){
+  var x = document.querySelectorAll(".card-back");
+  for (let i = 0; i < x.length; i++) {
+    x[i].classList.remove("hidden");
+  }
+
 }

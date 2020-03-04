@@ -59,11 +59,23 @@
   font-size: 32px;
   position: fixed;
   text-align: center;
-  line-height: 300px;
   left: 40%;
   top: 25%;
   width: 450px;
   height: 300px;
   border-radius: 25px;
   background-color: aqua;
+}
+
+.button {
+  background-color: rgb(21, 79, 23);
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 12px;
 }
