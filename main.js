@@ -4,6 +4,9 @@ var firstCardClasses;
 var secondCardClasses;
 var maxMatches = 9;
 var matches=0;
+var gamesPlayed = 0;
+var attempts = 0;
+var accuracy;
 
 var gameCards = document.querySelector("#gameCards");
 gameCards.addEventListener("click", handleClick);
@@ -23,10 +26,11 @@ function handleClick(event) {
     secondCardClicked = event.target;
     secondCardClasses = event.target.previousElementSibling.className;
     gameCards.removeEventListener("click", handleClick);
+
     if (firstCardClasses === secondCardClasses) {
       matches++;
       if (matches === maxMatches) {
-        console.log("You have won");
+        console.log("attempts:", attempts);
         document.querySelector("#win").classList.remove("hidden");
       }
       firstCardClicked = null;
@@ -34,9 +38,11 @@ function handleClick(event) {
       gameCards.addEventListener("click", handleClick);
     }
     else {
-      console.log("matches:",matches);
+      console.log("attempts:", attempts);
       setTimeout(hide,1500);
     }
+    attempts++;
+    displayStats();
   }
 }
 
@@ -46,4 +52,14 @@ function hide() {
   firstCardClicked = null;
   secondCardClicked = null;
   gameCards.addEventListener("click", handleClick);
+}
+
+function displayStats(){
+  document.querySelector("#gamesPlayed").textContent = gamesPlayed;
+  document.querySelector("#attempts").textContent = attempts;
+  document.querySelector("#accuracy").textContent = calculateAccuracy(attempts,matches)+"%";
+}
+
+function calculateAccuracy(attempts, matches){
+  return Math.trunc(matches/attempts*100);
 }
