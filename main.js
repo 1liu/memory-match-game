@@ -8,6 +8,7 @@ var gamesPlayed = 0;
 var attempts = 0;
 var accuracy;
 
+shuffleCards();
 var gameCards = document.querySelector("#gameCards");
 gameCards.addEventListener("click", handleClick);
 
@@ -84,6 +85,18 @@ function resetCards(){
   var x = document.querySelectorAll(".card-back");
   for (let i = 0; i < x.length; i++) {
     x[i].classList.remove("hidden");
+  }
+
+}
+
+function shuffleCards(){
+  var cards = document.querySelectorAll(".card-front");
+  for (let i = 0; i<cards.length;i++){
+    var randomPosition = Math.floor(Math.random() * cards.length)
+    var placeHolder = cards[i].className;
+    cards[i].className = cards[randomPosition].className;
+    cards[randomPosition].className = placeHolder;
+
   }
 
 }
