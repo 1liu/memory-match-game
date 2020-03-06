@@ -187,8 +187,8 @@ function shuffleCards() {
 }
 
 function startGame() {
-  document.querySelector(".container").classList.remove("blur");
   if (mode) {
+    document.querySelector(".container").classList.remove("blur");
     resetGame();
     document.querySelector(".container").classList.remove("no-click");
   }
