@@ -3,13 +3,107 @@
   max-width: 1500px;
   height: 100%;
   margin: auto;
-  background-image: url("./assets/images/lfz-background.jpg");
+  background-image: url("./assets/images/background.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
-.row {
+.headerRow {
+  height: 20%;
   width: 100%;
-  display: flex;
   margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.headerRow h1 {
+  font-size: 3rem;
+}
+
+.gameRow {
+  width: 100%;
+  height: 60vh;
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+body {
+  height: 100vh;
+}
+
+.statsGrid {
+  height: 20%;
+  /* margin: 1rem 0 5rem; */
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.statsGridItem {
+  width: 20%;
+  margin: 0 1%;
+  text-align: center;
+  background-color: lightblue;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid red;
+  border-radius: 10px;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+}
+
+.statsGridItem div {
+  margin: .5rem 0;
+}
+
+.statsGridItem button {
+  background-color: red;
+}
+
+.stats {
+  width: 10%;
+  margin: 2%;
+  padding: 2%;
+  height: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: lightblue;
+}
+
+.gameCards {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  height: 90%;
+  padding: 0 0;
+}
+
+.card {
+  height: 33%;
+  background-color: black;
+  text-align: center;
+  margin: .25%;
+}
+
+.headerRow {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 0;
 }
 
 .col-1 {
@@ -58,60 +152,4 @@
 
 .col-12 {
   width: 96%;
-}
-
-.headerRow {
-  height: 100px;
-}
-
-.gameRow {
-  height: 700px;
-  display: flex;
-  justify-content: space-evenly;
-}
-
-body {
-  height: 97vh;
-}
-
-aside {
-  height: 80%;
-  margin: 1rem 0 5rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-aside>div {
-  width: 90%;
-  margin: 1%;
-  height: 10%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: lightblue;
-}
-
-main {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  height: 80%;
-  padding: 1.5rem 0;
-}
-
-main>div {
-  background-color: black;
-  text-align: center;
-  margin: .1rem;
-  height: 24%;
-}
-
-
-
-.headerRow {
-  display: flex;
-  justify-content: center;
-  text-align: center;
-  margin-bottom: 0;
 }

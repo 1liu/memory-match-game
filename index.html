@@ -5,100 +5,116 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Memory Match</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="grid.css">
+  <link rel="stylesheet" href="style.css">
+
 
 </head>
 
 <body>
-  <div class="container">
-    <header class="headerRow row">
-      <h1>LFZ Memory Match</h1>
+  <div class="container no-click">
+    <!-- Header Row -->
+    <header class="headerRow">
+      <h1>It's a Game</h1>
     </header>
-    <div class="gameRow row">
-      <aside class="col-2">
-        <div>Stats</div>
-        <div>Games Played</div>
-        <div id="gamesPlayed">0</div>
-        <div>Attempts</div>
-        <div id="attempts">0</div>
-        <div>Accuracy</div>
-        <div id="accuracy">0</div>
-      </aside>
-      <main class="col-10" id="gameCards">
+    <!-- Cards Row -->
+    <div class="gameRow">
+      <main class="col-12 gameCards">
         <div class="col-2 card">
-          <div class="card-front js-logo"></div>
+          <div class="card-front js-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front css-logo"></div>
+          <div class="card-front css-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front docker-logo"></div>
+          <div class="card-front docker-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front github-logo"></div>
+          <div class="card-front github-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front html-logo"></div>
+          <div class="card-front html-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front mysql-logo"></div>
+          <div class="card-front mysql-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front node-logo"></div>
+          <div class="card-front node-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front php-logo"></div>
+          <div class="card-front php-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front react-logo"></div>
+          <div class="card-front react-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front js-logo"></div>
+          <div class="card-front js-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front css-logo"></div>
+          <div class="card-front css-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front docker-logo"></div>
+          <div class="card-front docker-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front github-logo"></div>
+          <div class="card-front github-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front html-logo"></div>
+          <div class="card-front html-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front mysql-logo"></div>
+          <div class="card-front mysql-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front node-logo"></div>
+          <div class="card-front node-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front php-logo"></div>
+          <div class="card-front php-logo hidden"></div>
           <div class="card-back"></div>
         </div>
         <div class="col-2 card">
-          <div class="card-front react-logo"></div>
+          <div class="card-front react-logo hidden"></div>
           <div class="card-back"></div>
         </div>
+        <!-- Stats Row -->
+        <aside class="col-12 statsGrid">
+          <!-- <div>Stats</div> -->
+          <div class="statsGridItem">
+            <div>Games Played</div>
+            <div id="gamesPlayed">0</div>
+          </div>
+          <div class="statsGridItem">
+            <div>Attempts</div>
+            <div id="attempts">0</div>
+          </div>
+          <div class="statsGridItem">
+            <div>Accuracy</div>
+            <div id="accuracy">0</div>
+          </div>
+          <div class="statsGridItem">
+            <section class="buttonContainer">
+              <div><button id="reset">Reset</button></div>
+              <div><button id="hint">Hint</button></div>
 
+            </section>
+          </div>
+        </aside>
       </main>
     </div>
   </div>
@@ -106,7 +122,19 @@
     <p>Congratulations You have Won!!!</p>
     <button class="button" id="button">Would You Like to Play Again?</button>
   </div>
-<script src="main.js"></script>
+  <div class="modal-overlay-start hidden" id="start">
+    <!-- <p>Ready for the Game?</p> -->
+    <div class="modeSelection">
+      <button class="button-start box" id="button-easy">Easy</button>
+      <button class="button-start box" id="button-normal">Normal</button>
+      <button class="button-start box" id="button-hard">Hard</button>
+      <button class="button-start box" id="button-start">Start</button>
+    </div>
+  </div>
+  <div class="modal-overlay-reminder hidden" id="rotateReminder">
+    <p>Please Rotate Screen</p>
+  </div>
+  <script src="main.js"></script>
 </body>
 
 </html>
