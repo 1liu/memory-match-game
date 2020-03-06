@@ -61,7 +61,7 @@ gameCards.addEventListener("click", handleClick);
 // console.log("event:",event);
 //Reset Function
 var reset = document.querySelector("#reset");
-reset.addEventListener("click",resetGame);
+reset.addEventListener("click", resetGame);
 
 //Hint Function
 var hint = document.querySelector("#hint");
@@ -72,44 +72,49 @@ function handleClick(event) {
   if (event.target.className.indexOf("card-back") === -1) {
     return;
   }
-  console.log("event:", event);
-
-  var theTarget = event.target;
-  theTarget.classList.add("hidden");
+  // console.log("event:", event);
 
   if (!firstCardClicked) {
     firstCardClicked = event.target;
+    firstCardClicked.classList.add("hidden");
     firstCardSibling = firstCardClicked.previousElementSibling;
     firstCardClasses = firstCardSibling.className;
     firstCardSibling.classList.remove("hidden");
     setTimeout(hideFirstCard, 2000 - mode * 600);
   }
   else {
-    secondCardClicked = event.target;
-    secondCardSibling = event.target.previousElementSibling;
-    secondCardClasses = secondCardSibling.className;
-    secondCardSibling.classList.remove("hidden");
-    gameCards.removeEventListener("click", handleClick);
+    if (event.target !== firstCardClicked) {
+      // clicked the same cards
+      secondCardClicked = event.target;
+      secondCardClicked.classList.add("hidden");
+      secondCardSibling = event.target.previousElementSibling;
+      secondCardClasses = secondCardSibling.className;
+      secondCardSibling.classList.remove("hidden");
+      gameCards.removeEventListener("click", handleClick);
 
-    if (firstCardClasses === secondCardClasses) {
-      matches++;
-      showFirstCard();
-      if (matches === maxMatches) {
-        console.log("attempts:", attempts);
-        document.querySelector("#win").classList.remove("hidden");
-        // reset mode here
-        mode = 0;
+      if (firstCardClasses === secondCardClasses) {
+        matches++;
+        showFirstCard();
+        if (matches === maxMatches) {
+          console.log("attempts:", attempts);
+          document.querySelector("#win").classList.remove("hidden");
+          // reset mode here
+          mode = 0;
+        }
+        firstCardClicked = null;
+        secondCardClicked = null;
+        gameCards.addEventListener("click", handleClick);
       }
-      firstCardClicked = null;
-      secondCardClicked = null;
-      gameCards.addEventListener("click", handleClick);
+      else {
+        console.log("attempts:", attempts);
+        setTimeout(hideBoth, 2000 - mode * 600);
+      }
+      attempts++;
+      displayStats();
     }
-    else {
-      console.log("attempts:", attempts);
-      setTimeout(hideBoth, 2000-mode*600);
+    else{
+      // clicked two different cards
     }
-    attempts++;
-    displayStats();
   }
 }
 var button = document.querySelector("#button");
@@ -125,7 +130,7 @@ function hideBoth() {
   secondCardClicked = null;
   gameCards.addEventListener("click", handleClick);
 }
-function hideFirstCard(){
+function hideFirstCard() {
   firstCardClicked.classList.remove("hidden");
   firstCardSibling.classList.add("hidden");
 }
@@ -186,25 +191,25 @@ function startGame() {
   }
 }
 
-function hintFunction(){
+function hintFunction() {
   console.log("Hint Clicked");
   flipAll();
   setTimeout(flipAll, 100);
 }
 
-function flipAll(){
+function flipAll() {
   var allCards = document.querySelectorAll(".card-front,.card-back");
-  for (let i =0; i<allCards.length;i++){
-    if(allCards[i].classList.contains("hidden")){
+  for (let i = 0; i < allCards.length; i++) {
+    if (allCards[i].classList.contains("hidden")) {
       allCards[i].classList.remove("hidden");
     }
-    else{
+    else {
       allCards[i].classList.add("hidden");
     }
   }
 }
 
-function showFirstCard(){
+function showFirstCard() {
   firstCardClicked.classList.add("hidden");
   firstCardSibling.classList.remove("hidden");
 }
