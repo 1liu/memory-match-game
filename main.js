@@ -151,6 +151,7 @@ function calculateAccuracy(attempts, matches) {
 
 function resetGame() {
   resetCards();
+  shuffleCards();
   matches = 0;
   gamesPlayed = 0;
   attempts = 0;
@@ -168,6 +169,7 @@ function resetCards() {
   var x = document.querySelectorAll(".card-back");
   for (let i = 0; i < x.length; i++) {
     x[i].classList.remove("hidden");
+    x[i].previousElementSibling.classList.add("hidden");
   }
 
 }
@@ -185,6 +187,7 @@ function shuffleCards() {
 }
 
 function startGame() {
+  document.querySelector(".container").classList.remove("blur");
   if (mode) {
     resetGame();
     document.querySelector(".container").classList.remove("no-click");
@@ -194,7 +197,7 @@ function startGame() {
 function hintFunction() {
   console.log("Hint Clicked");
   flipAll();
-  setTimeout(flipAll, 100);
+  setTimeout(flipAll, 200);
 }
 
 function flipAll() {
