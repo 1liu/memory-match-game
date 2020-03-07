@@ -1,6 +1,6 @@
 .container {
   width: 100%;
-  max-width: 1500px;
+  max-width: 1920px;
   height: 100%;
   margin: auto;
   background-image: url("./assets/images/Runway_large.jpg");
@@ -9,7 +9,7 @@
 }
 
 .headerRow {
-  height: 20%;
+  height: 15%;
   width: 100%;
   margin-bottom: 0.5rem;
   display: flex;
@@ -52,6 +52,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   border: 1px solid red;
   border-radius: 10px;
@@ -59,17 +60,30 @@ body {
 
 .buttonContainer {
   display: flex;
+  flex-basis: 50%;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 }
 
+.buttonContainer div {
+  flex-basis: 80%;
+  height: 3rem;
+}
+
 .statsGridItem div {
   margin: .5rem 0;
+  flex-basis: 100%;
+  display: flex;
+}
+
+.statsGridItem .buttonDiv {
+  margin: 0.1rem 0;
 }
 
 .statsGridItem button {
   background-color: red;
+  flex-basis: 100%;
 }
 
 .stats {

@@ -16,15 +16,18 @@ function displayRotate(x) {
   if (x.matches) { // If media query matches
     document.querySelector("#start").classList.add("hidden");
     document.querySelector("#rotateReminder").classList.remove("hidden");
+    document.querySelector(".container").classList.add("blur");
   } else {
     document.querySelector("#rotateReminder").classList.add("hidden");
     document.querySelector("#start").classList.remove("hidden");
+    document.querySelector(".container").classList.remove("blur");
+
   }
 }
 
-var x = window.matchMedia("(max-width: 560px)")
-displayRotate(x) // Call listener function at run time
-x.addListener(displayRotate) // Attach listener function on state changes
+var x = window.matchMedia("(max-width: 560px)");
+displayRotate(x); // Call listener function at run time
+x.addListener(displayRotate); // Attach listener function on state changes
 
 //
 
@@ -61,7 +64,7 @@ gameCards.addEventListener("click", handleClick);
 // console.log("event:",event);
 //Reset Function
 var reset = document.querySelector("#reset");
-reset.addEventListener("click", resetGame);
+reset.addEventListener("click", function () { location.reload();});
 
 //Hint Function
 var hint = document.querySelector("#hint");
@@ -197,7 +200,7 @@ function startGame() {
 function hintFunction() {
   console.log("Hint Clicked");
   flipAll();
-  setTimeout(flipAll, 200);
+  setTimeout(flipAll, 250);
 }
 
 function flipAll() {

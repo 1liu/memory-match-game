@@ -3,7 +3,10 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
   font-family: "Inconsolata", monospace;
   font-size: 1.13em;
   font-weight: bold;
-  /* cursor: url('./assets/images/cursor.ico'), auto; */
+}
+
+* {
+  cursor: url('./assets/images/cursor.ico'), auto;
 }
 
 .card-front, .card-back {
@@ -114,7 +117,7 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
   width: 80%;
   height: 6rem;
   border-radius: 25px;
-  background-color: aqua;
+  background-color: red;
   align-items: center;
 }
 
@@ -130,11 +133,28 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
   justify-content: center;
 }
 
-.startButtonRow {
+/* .startButtonRow {
   margin-top: 1rem;
-}
+} */
 
 .button {
+  -moz-box-shadow: inset 0px 1px 0px 0px orange;
+  -webkit-box-shadow: inset 0px 1px 0px 0px orange;
+  box-shadow: inset 0px 1px 0px 0px orange;
+  background-color: orange;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  cursor: pointer;
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px orange;
+}
+
+.button_win {
   background-color: rgb(21, 79, 23);
   border: none;
   color: white;
@@ -163,8 +183,8 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
 .box {
   background: linear-gradient(to right, gold, purple);
   color: white;
-  --width: 250px;
-  --height: calc(var(--width) / 4);
+  --width: 300px;
+  --height: calc(var(--width) / 6);
   width: var(--width);
   height: var(--height);
   text-align: center;
