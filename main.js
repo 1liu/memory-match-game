@@ -17,10 +17,11 @@ function displayRotate(x) {
     document.querySelector("#start").classList.add("hidden");
     document.querySelector("#rotateReminder").classList.remove("hidden");
     document.querySelector(".container").classList.add("blur");
+
   } else {
     document.querySelector("#rotateReminder").classList.add("hidden");
     document.querySelector("#start").classList.remove("hidden");
-    document.querySelector(".container").classList.remove("blur");
+    // document.querySelector(".container").classList.remove("blur");
 
   }
 }
@@ -101,6 +102,7 @@ function handleClick(event) {
         if (matches === maxMatches) {
           console.log("attempts:", attempts);
           document.querySelector("#win").classList.remove("hidden");
+
           // reset mode here
           mode = 0;
         }
@@ -120,8 +122,8 @@ function handleClick(event) {
     }
   }
 }
-var button = document.querySelector("#button");
-button.addEventListener("click", resetGame);
+var win_button = document.querySelector("#win_button");
+win_button.addEventListener("click", resetGame);
 
 function hideBoth() {
   firstCardClicked.classList.remove("hidden");
