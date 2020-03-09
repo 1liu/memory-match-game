@@ -6,10 +6,9 @@ var firstCardClasses;
 var secondCardClasses;
 var maxMatches = 9;
 var matches = 0;
-var gamesPlayed = 0;
+var gamesPlayed = -1;
 var attempts = 0;
 var mode = 0;
-var accuracy;
 
 // Media Queries
 function displayRotate(x) {
@@ -65,7 +64,7 @@ gameCards.addEventListener("click", handleClick);
 // console.log("event:",event);
 //Reset Function
 var reset = document.querySelector("#reset");
-reset.addEventListener("click", function () { location.reload();});
+reset.addEventListener("click", resetGame);
 
 //Hint Function
 var hint = document.querySelector("#hint");
@@ -84,11 +83,11 @@ function handleClick(event) {
     firstCardSibling = firstCardClicked.previousElementSibling;
     firstCardClasses = firstCardSibling.className;
     firstCardSibling.classList.remove("hidden");
-    setTimeout(hideFirstCard, 2000 - mode * 600);
+    setTimeout(hideFirstCard, 500);
   }
   else {
     if (event.target !== firstCardClicked) {
-      // clicked the same cards
+      // clicked two different cards
       secondCardClicked = event.target;
       secondCardClicked.classList.add("hidden");
       secondCardSibling = event.target.previousElementSibling;
@@ -111,14 +110,15 @@ function handleClick(event) {
         gameCards.addEventListener("click", handleClick);
       }
       else {
+        // not match; flip back both
         console.log("attempts:", attempts);
         setTimeout(hideBoth, 2000 - mode * 600);
       }
       attempts++;
       displayStats();
     }
-    else{
-      // clicked two different cards
+    else {
+      // clicked two same cards
     }
   }
 }
@@ -158,16 +158,18 @@ function resetGame() {
   resetCards();
   shuffleCards();
   matches = 0;
-  gamesPlayed = 0;
+  gamesPlayed++;
   attempts = 0;
   accuracy = 0;
   // mode = 0;
   displayStats();
   document.querySelector("#win").classList.add("hidden");
   document.querySelector("#start").classList.add("hidden");
-  easy.classList.remove("red");
-  normal.classList.remove("red");
-  hard.classList.remove("red");
+  // easy.classList.remove("red");
+  // normal.classList.remove("red");
+  // hard.classList.remove("red");
+  flipAll();
+  setTimeout(flipAll, 3000 - 500 * mode);
 }
 
 function resetCards() {
@@ -195,6 +197,10 @@ function startGame() {
   if (mode) {
     document.querySelector(".container").classList.remove("blur");
     resetGame();
+    //
+    flipAll();
+    setTimeout(flipAll, 3000 - 500 * mode);
+    //
     document.querySelector(".container").classList.remove("no-click");
   }
 }
@@ -220,4 +226,8 @@ function flipAll() {
 function showFirstCard() {
   firstCardClicked.classList.add("hidden");
   firstCardSibling.classList.remove("hidden");
+}
+
+function showAllCards() {
+
 }

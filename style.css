@@ -5,6 +5,8 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
   font-weight: bold;
 }
 
+
+
 * {
   cursor: url('./assets/images/cursor.ico'), auto;
 }

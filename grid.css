@@ -3,7 +3,7 @@
   max-width: 1920px;
   height: 100%;
   margin: auto;
-  background-image: url("./assets/images/Runway_large.jpg");
+  /* background-image: url("./assets/images/Runway_large.jpg"); */
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -32,6 +32,8 @@
 
 body {
   height: 100vh;
+  margin: 0;
+  padding: 0;
 }
 
 .statsGrid {
@@ -168,4 +170,36 @@ body {
 
 .col-12 {
   width: 96%;
+}
+
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url("./assets/images/Runway_large.jpg") center center / cover no-repeat;
+  }
+  .fullscreen-bg__video {
+    display: none;
+  }
 }
