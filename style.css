@@ -1,3 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box {
+  font-family: "Inconsolata", monospace;
+  font-size: 1.13em;
+  font-weight: bold;
+}
+
+
+
+* {
+  cursor: url('./assets/images/cursor.ico'), auto;
+}
+
 .card-front, .card-back {
   position: absolute;
   background-repeat: no-repeat;
@@ -9,65 +22,157 @@
 
 .card {
   position: relative;
+  background-color: rgba(0, 0, 0, 0);
 }
 
 .card-back {
-  background-image: url("/assets/images/lfz-card.jpg");
+  background-image: url("./assets/images/card_back.png");
 }
 
-.js-logo {
-  background-image: url("/assets/images/js-logo.png")
+.pic_1 {
+  background-image: url("./assets/images/pic_1.png")
 }
 
-.css-logo {
-  background-image: url("/assets/images/css-logo.png");
+.pic_2 {
+  background-image: url("./assets/images/pic_2.png");
 }
 
-.docker-logo {
-  background-image: url("/assets/images/docker-logo.jpg");
+.pic_3 {
+  background-image: url("./assets/images/pic_3.png");
 }
 
-.github-logo {
-  background-image: url("/assets/images/gitHub-logo.png");
+.pic_4 {
+  background-image: url("./assets/images/pic_4.png");
 }
 
-.html-logo {
-  background-image: url("/assets/images/html-logo.png");
+.pic_5 {
+  background-image: url("./assets/images/pic_5.png");
 }
 
-.mysql-logo {
-  background-image: url("/assets/images/mysql-logo.jpg");
+.pic_6 {
+  background-image: url("./assets/images/pic_6.png");
 }
 
-.node-logo {
-  background-image: url("/assets/images/node-logo.png");
+.pic_7 {
+  background-image: url("./assets/images/pic_7.png");
 }
 
-.php-logo {
-  background-image: url("/assets/images/php-logo.jpeg");
+.pic_8 {
+  background-image: url("./assets/images/pic_8.png");
 }
 
-.react-logo {
-  background-image: url("/assets/images/react-logo.png");
+.pic_9 {
+  background-image: url("./assets/images/pic_9.png");
 }
 
 .hidden {
   display: none;
 }
 
+.blur {
+  -webkit-filter: blur(5px);
+  /* Chrome, Opera */
+  -moz-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+}
+
 .modal-overlay {
   font-size: 32px;
   position: fixed;
   text-align: center;
-  left: 40%;
-  top: 25%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   width: 450px;
   height: 300px;
   border-radius: 25px;
-  background-color: aqua;
+  background-image: url("./assets/images/win_airplane.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  box-shadow: 10px 10px 5px grey;
 }
 
+.modal-overlay p {
+  /* font-size: 3rem;
+  color: white;
+  margin: 30px 0;
+  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; */
+  color: #fff;
+  font-size: 3rem;
+  margin: 30px 0 40px 0;
+  -webkit-transform: rotate(10deg) skew(-10deg);
+  text-shadow: 1px 1px 0 #51B3A3, 2px 2px 0 #51B3A3, 3px 4px 0 #51B3A3, 4px 5px 0 #51B3A3, 5px 7px 0 #51B3A3, 6px 8px 0 #51B3A3, 7px 10px 0 #51B3A3, 8px 11px 0 #51B3A3, 9px 13px 0 #51B3A3, 10px 14px 0 #51B3A3, 11px 16px 0 #51B3A3;
+}
+
+.modal-overlay-start {
+  font-size: 32px;
+  position: fixed;
+  text-align: center;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 450px;
+  height: 300px;
+  border-radius: 25px;
+  /* background-color: yellow; */
+  /* display: flex; */
+  /* align-content: center; */
+  /* justify-content: center; */
+  /* height: 100vh; */
+}
+
+.modal-overlay-reminder {
+  font-size: 32px;
+  position: fixed;
+  text-align: center;
+  margin: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 6rem;
+  border-radius: 25px;
+  background-color: red;
+  align-items: center;
+}
+
+.modeSelection {
+  width: 100%;
+  /* display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center; */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+/* .startButtonRow {
+  margin-top: 1rem;
+} */
+
 .button {
+  -moz-box-shadow: inset 0px 1px 0px 0px orange;
+  -webkit-box-shadow: inset 0px 1px 0px 0px orange;
+  box-shadow: inset 0px 1px 0px 0px orange;
+  background-color: orange;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  display: inline-block;
+  /* cursor: pointer; */
+  color: black;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px orange;
+}
+
+.button_win {
   background-color: rgb(21, 79, 23);
   border: none;
   color: white;
@@ -79,3 +184,94 @@
   margin: 4px 2px;
   border-radius: 12px;
 }
+
+.button-start {
+  background-color: lightskyblue;
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px .5%;
+  border-radius: 12px;
+}
+
+.box {
+  background: linear-gradient(to right, gold, purple);
+  color: white;
+  --width: 300px;
+  --height: calc(var(--width) / 6);
+  width: var(--width);
+  height: var(--height);
+  text-align: center;
+  /* line-height: var(--height); */
+  font-size: calc(var(--height) / 2.5);
+  font-family: sans-serif;
+  letter-spacing: 0.2em;
+  border: 1px solid darkgoldenrod;
+  border-radius: 2em;
+  transform: perspective(500px) rotateY(-15deg);
+  text-shadow: 6px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 0 5px rgba(0, 0, 0, 0.2);
+  transition: 0.5s;
+  position: relative;
+  overflow: hidden;
+}
+
+.box:hover {
+  transform: perspective(500px) rotateY(15deg);
+  text-shadow: -6px 3px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: -2px 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.box::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, white, transparent);
+  left: -100%;
+  transition: 0.5s;
+}
+
+.box:hover::before {
+  left: 100%;
+}
+
+.red {
+  background-color: red;
+}
+
+.no-click {
+  pointer-events: none;
+}
+
+/* Hover Effect */
+
+.grow:hover {
+  -webkit-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  transform: scale(1.3);
+}
+
+/* Media Query */
+
+/* Extra small devices (phones, 600px and down) */
+
+@media only screen and (max-width: 600px) {
+  .modal-overlay-start {
+    font-size: 1rem;
+    width: 250px;
+    height: 200px;
+  }
+  /* Small devices (portrait tablets and large phones, 600px and up) */
+  @media only screen and (min-width: 600px) {}
+  /* Medium devices (landscape tablets, 768px and up) */
+  @media only screen and (min-width: 768px) {}
+  /* Large devices (laptops/desktops, 992px and up) */
+  @media only screen and (min-width: 992px) {}
+  /* Extra large devices (large laptops and desktops, 1200px and up) */
+  @media only screen and (min-width: 1200px) {}
+  /*  */
