@@ -112,7 +112,7 @@ function handleClick(event) {
       else {
         // not match; flip back both
         console.log("attempts:", attempts);
-        setTimeout(hideBoth, 2000 - mode * 600);
+        setTimeout(hideBoth, 1000);
       }
       attempts++;
       displayStats();
@@ -169,7 +169,7 @@ function resetGame() {
   // normal.classList.remove("red");
   // hard.classList.remove("red");
   flipAll();
-  setTimeout(flipAll, 3000 - 500 * mode);
+  setTimeout(flipAll, 3000 - 700 * mode);
 }
 
 function resetCards() {
@@ -198,8 +198,8 @@ function startGame() {
     document.querySelector(".container").classList.remove("blur");
     resetGame();
     //
-    flipAll();
-    setTimeout(flipAll, 3000 - 500 * mode);
+    // flipAll();
+    // setTimeout(flipAll, 3000 - 500 * mode);
     //
     document.querySelector(".container").classList.remove("no-click");
   }
