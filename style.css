@@ -14,7 +14,7 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
 .card-front, .card-back {
   position: absolute;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center;
   height: 100%;
   width: 100%;
