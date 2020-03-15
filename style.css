@@ -5,11 +5,9 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
   font-weight: bold;
 }
 
-
-
-* {
+/* * {
   cursor: url('./assets/images/cursor.ico'), auto;
-}
+} */
 
 .card-front, .card-back {
   position: absolute;
@@ -164,7 +162,7 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
   -webkit-border-radius: 3px;
   border-radius: 3px;
   display: inline-block;
-  /* cursor: pointer; */
+  cursor: pointer;
   color: black;
   font-size: 1rem;
   font-weight: bold;
