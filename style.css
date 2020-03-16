@@ -5,6 +5,26 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
   font-weight: bold;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Arvo:700');
+@import url('https://fonts.googleapis.com/css?family=Seaweed+Script');
+.shadow {
+  color: #fff;
+  font-family: Arvo;
+  font-weight: bold;
+  text-shadow: -3px -3px 0 #222, 3px -3px 0 #222, -3px 3px 0 #222, 3px 3px 0 #222, 4px 4px 0 #fff, 5px 5px 0 #fff, 6px 6px 0 #fff, 7px 7px 0 #fff;
+  line-height: 0.8em;
+  letter-spacing: 0.1em;
+  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+  -moz-transform: scaleY(0.7);
+  margin: 0;
+  text-align: center;
+}
+
 /* * {
   cursor: url('./assets/images/cursor.ico'), auto;
 } */
@@ -94,10 +114,6 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
 }
 
 .modal-overlay p {
-  /* font-size: 3rem;
-  color: white;
-  margin: 30px 0;
-  text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue; */
   color: #fff;
   font-size: 3rem;
   margin: 30px 0 40px 0;
@@ -115,11 +131,6 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
   width: 450px;
   height: 300px;
   border-radius: 25px;
-  /* background-color: yellow; */
-  /* display: flex; */
-  /* align-content: center; */
-  /* justify-content: center; */
-  /* height: 100vh; */
 }
 
 .modal-overlay-reminder {
@@ -139,19 +150,11 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
 
 .modeSelection {
   width: 100%;
-  /* display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: center; */
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
 }
-
-/* .startButtonRow {
-  margin-top: 1rem;
-} */
 
 .button {
   -moz-box-shadow: inset 0px 1px 0px 0px orange;
@@ -256,20 +259,22 @@ html, body, .modal-overlay, .modal-overlay-start, .modal-overlay-reminder, .box 
 
 /* Media Query */
 
-/* Extra small devices (phones, 600px and down) */
-
 @media only screen and (max-width: 600px) {
-  .modal-overlay-start {
+  /* .modal-overlay-start {
     font-size: 1rem;
     width: 250px;
     height: 200px;
+  } */
+}
+
+@media only screen and (min-width: 600px) {}
+
+@media only screen and (min-width: 768px) {}
+
+@media only screen and (min-width: 992px) {}
+
+@media only screen and (min-width: 1000px) {
+  h1 {
+    font-size: 5rem;
   }
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px) {}
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px) {}
-  /* Large devices (laptops/desktops, 992px and up) */
-  @media only screen and (min-width: 992px) {}
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1200px) {}
-  /*  */
+}
