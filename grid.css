@@ -3,7 +3,6 @@
   max-width: 1920px;
   height: 100%;
   margin: auto;
-  /* background-image: url("./assets/images/Runway_large.jpg"); */
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
@@ -16,10 +15,6 @@
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.headerRow h1 {
-  font-size: 3rem;
 }
 
 .gameRow {
@@ -38,7 +33,6 @@ body {
 
 .statsGrid {
   height: 20%;
-  /* margin: 1rem 0 5rem; */
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -195,7 +189,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 375px) {
   .fullscreen-bg {
     background: url("./assets/images/Runway_large.jpg") center center / cover no-repeat;
   }
