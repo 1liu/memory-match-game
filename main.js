@@ -1,7 +1,7 @@
 var firstCardClicked;
 var firstCardSibling;
 var secondCardClicked;
-var secondCardSibling
+var secondCardSibling;
 var firstCardClasses;
 var secondCardClasses;
 var maxMatches = 9;
@@ -9,6 +9,11 @@ var matches = 0;
 var gamesPlayed = -1;
 var attempts = 0;
 var mode = 0;
+
+
+var x = window.matchMedia("(max-width: 560px)");
+displayRotate(x); // Call listener function at run time
+x.addListener(displayRotate); // Attach listener function on state changes
 
 // Media Queries
 function displayRotate(x) {
@@ -20,18 +25,9 @@ function displayRotate(x) {
   } else {
     document.querySelector("#rotateReminder").classList.add("hidden");
     document.querySelector("#start").classList.remove("hidden");
-    // document.querySelector(".container").classList.remove("blur");
-
   }
 }
 
-var x = window.matchMedia("(max-width: 560px)");
-displayRotate(x); // Call listener function at run time
-x.addListener(displayRotate); // Attach listener function on state changes
-
-//
-
-shuffleCards();
 //Mode Selection
 var easy = document.querySelector("#button-easy");
 easy.addEventListener("click", function () {
@@ -55,18 +51,13 @@ hard.addEventListener("click", function () {
   normal.classList.remove("red");
 });
 
-//Start Function
+//Event Lisenter
 var startButton = document.querySelector("#button-start");
 startButton.addEventListener("click", startGame);
-
 var gameCards = document.querySelector(".gameCards");
 gameCards.addEventListener("click", handleClick);
-// console.log("event:",event);
-//Reset Function
 var reset = document.querySelector("#reset");
 reset.addEventListener("click", resetGame);
-
-//Hint Function
 var hint = document.querySelector("#hint");
 hint.addEventListener("click", hintFunction);
 
@@ -75,7 +66,6 @@ function handleClick(event) {
   if (event.target.className.indexOf("card-back") === -1) {
     return;
   }
-  // console.log("event:", event);
 
   if (!firstCardClicked) {
     firstCardClicked = event.target;
@@ -165,9 +155,6 @@ function resetGame() {
   displayStats();
   document.querySelector("#win").classList.add("hidden");
   document.querySelector("#start").classList.add("hidden");
-  // easy.classList.remove("red");
-  // normal.classList.remove("red");
-  // hard.classList.remove("red");
   flipAll();
   setTimeout(flipAll, 3000 - 700 * mode);
 }
@@ -188,7 +175,6 @@ function shuffleCards() {
     var placeHolder = cards[i].className;
     cards[i].className = cards[randomPosition].className;
     cards[randomPosition].className = placeHolder;
-
   }
 
 }
@@ -197,10 +183,6 @@ function startGame() {
   if (mode) {
     document.querySelector(".container").classList.remove("blur");
     resetGame();
-    //
-    // flipAll();
-    // setTimeout(flipAll, 3000 - 500 * mode);
-    //
     document.querySelector(".container").classList.remove("no-click");
   }
 }
@@ -226,8 +208,4 @@ function flipAll() {
 function showFirstCard() {
   firstCardClicked.classList.add("hidden");
   firstCardSibling.classList.remove("hidden");
-}
-
-function showAllCards() {
-
 }
