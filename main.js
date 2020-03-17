@@ -107,9 +107,7 @@ function handleClick(event) {
       attempts++;
       displayStats();
     }
-    else {
-      // clicked two same cards
-    }
+
   }
 }
 var win_button = document.querySelector("#win_button");
