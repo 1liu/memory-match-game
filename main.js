@@ -1,17 +1,18 @@
-var firstCardClicked;
-var firstCardSibling;
-var secondCardClicked;
-var secondCardSibling;
-var firstCardClasses;
-var secondCardClasses;
-var maxMatches = 9;
-var matches = 0;
-var gamesPlayed = -1;
-var attempts = 0;
-var mode = 0;
+let firstCardClicked;
+let firstCardSibling;
+let secondCardClicked;
+let secondCardSibling;
+let firstCardClasses;
+let secondCardClasses;
+const maxMatches = 9;
+let matches = 0;
+let gamesPlayed = -1;
+let attempts = 0;
+let mode = 0;
+let accuracy = 0;
 
 
-var x = window.matchMedia("(max-width: 560px)");
+let x = window.matchMedia("(max-width: 560px)");
 displayRotate(x); // Call listener function at run time
 x.addListener(displayRotate); // Attach listener function on state changes
 
@@ -29,21 +30,21 @@ function displayRotate(x) {
 }
 
 //Mode Selection
-var easy = document.querySelector("#button-easy");
+let easy = document.querySelector("#button-easy");
 easy.addEventListener("click", function () {
   mode = 1;
   easy.classList.add("red");
   normal.classList.remove("red");
   hard.classList.remove("red");
 });
-var normal = document.querySelector("#button-normal");
+let normal = document.querySelector("#button-normal");
 normal.addEventListener("click", function () {
   mode = 2;
   normal.classList.add("red");
   easy.classList.remove("red");
   hard.classList.remove("red");
 });
-var hard = document.querySelector("#button-hard");
+let hard = document.querySelector("#button-hard");
 hard.addEventListener("click", function () {
   mode = 3;
   hard.classList.add("red");
@@ -52,13 +53,13 @@ hard.addEventListener("click", function () {
 });
 
 //Event Lisenter
-var startButton = document.querySelector("#button-start");
+let startButton = document.querySelector("#button-start");
 startButton.addEventListener("click", startGame);
-var gameCards = document.querySelector(".gameCards");
+let gameCards = document.querySelector(".gameCards");
 gameCards.addEventListener("click", handleClick);
-var reset = document.querySelector("#reset");
+let reset = document.querySelector("#reset");
 reset.addEventListener("click", resetGame);
-var hint = document.querySelector("#hint");
+let hint = document.querySelector("#hint");
 hint.addEventListener("click", hintFunction);
 
 // Handle Function
@@ -110,7 +111,7 @@ function handleClick(event) {
 
   }
 }
-var win_button = document.querySelector("#win_button");
+let win_button = document.querySelector("#win_button");
 win_button.addEventListener("click", resetGame);
 
 function hideBoth() {
@@ -149,7 +150,6 @@ function resetGame() {
   gamesPlayed++;
   attempts = 0;
   accuracy = 0;
-  // mode = 0;
   displayStats();
   document.querySelector("#win").classList.add("hidden");
   document.querySelector("#start").classList.add("hidden");
@@ -158,7 +158,7 @@ function resetGame() {
 }
 
 function resetCards() {
-  var x = document.querySelectorAll(".card-back");
+  let x = document.querySelectorAll(".card-back");
   for (let i = 0; i < x.length; i++) {
     x[i].classList.remove("hidden");
     x[i].previousElementSibling.classList.add("hidden");
@@ -167,10 +167,10 @@ function resetCards() {
 }
 
 function shuffleCards() {
-  var cards = document.querySelectorAll(".card-front");
+  let cards = document.querySelectorAll(".card-front");
   for (let i = 0; i < cards.length; i++) {
-    var randomPosition = Math.floor(Math.random() * cards.length)
-    var placeHolder = cards[i].className;
+    let randomPosition = Math.floor(Math.random() * cards.length)
+    let placeHolder = cards[i].className;
     cards[i].className = cards[randomPosition].className;
     cards[randomPosition].className = placeHolder;
   }
@@ -192,7 +192,7 @@ function hintFunction() {
 }
 
 function flipAll() {
-  var allCards = document.querySelectorAll(".card-front,.card-back");
+  let allCards = document.querySelectorAll(".card-front,.card-back");
   for (let i = 0; i < allCards.length; i++) {
     if (allCards[i].classList.contains("hidden")) {
       allCards[i].classList.remove("hidden");
