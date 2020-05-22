@@ -21,3 +21,6 @@ Link: https://memory-match.yizhou-liu.com/
 - Users can view their number of attempts during their current game
 - Users can view how many games they have played
 - Users can restart the game upon completion
+
+### Planned
+* TBD
